@@ -15,16 +15,16 @@ Lp=turtle.Turtle()
 Lp.shape("square")
 Lp.color("cyan")
 Lp.penup()
-Lp.shapesize(12,2)
-Lp.goto(-750,0)
+Lp.shapesize(11,2)
+Lp.goto(-980,0)
 
 #Right_Paddle.
 Rp=turtle.Turtle()
 Rp.shape("square")
 Rp.color("cyan")
 Rp.penup()
-Rp.shapesize(12,2)
-Rp.goto(750,0)
+Rp.shapesize(11,2)
+Rp.goto(980,0)
 
 #Creating The Ball.
 Bl=turtle.Turtle()
@@ -34,8 +34,8 @@ Bl.color("red")
 Bl.penup()
 Bl.shapesize(2,2)
 Bl.goto(0,0)
-Bl.dx=2
-Bl.dy=-2
+Bl.dx=3.5
+Bl.dy=-3.5
 
 #Player_Points or Score.
 Ps=turtle.Turtle()
@@ -81,23 +81,23 @@ while True:
     if Bl.ycor()<-450:
             Bl.sety(-450)
             Bl.dy *= -1
-    if Bl.xcor()>900:
+    if Bl.xcor()>1055:
             Bl.goto(0,0)
             Bl.dx*=-1
-    if Bl.xcor()<-900:
+    if Bl.xcor()<-1060:
             Bl.goto(0,0)
             Bl.dx*=-1
     # Collision with the the walls.            
-    if (Bl.xcor()>730 and Bl.xcor()<750) and (Bl.ycor()<Rp.ycor()+40 and Bl.ycor()>Rp.ycor()-40):
-            Bl.setx(730)
+    if (Bl.xcor()>955 and Bl.xcor()<980) and (Bl.ycor()<Rp.ycor()+40 and Bl.ycor()>Rp.ycor()-40):
+            Bl.setx(955)
             Bl.dx*=-1
             right_player+=1
             Ps.clear()
             Ps.write("Left_player : {}    Right_player: {}".format(
                       left_player, right_player), align="center",
                       font=("Courier", 10, "normal"))
-    if (Bl.xcor()<-730 and Bl.xcor()>-750) and (Bl.ycor()<Lp.ycor()+40 and Bl.ycor()>Lp.ycor()-40):
-            Bl.setx(-730)
+    if (Bl.xcor()<-955 and Bl.xcor()>-780) and (Bl.ycor()<Lp.ycor()+40 and Bl.ycor()>Lp.ycor()-40):
+            Bl.setx(-955)
             Bl.dx*=-1
             left_player+=1
             Ps.clear()
